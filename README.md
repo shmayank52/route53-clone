@@ -10,18 +10,7 @@ real Route 53 UI. Authentication is mocked (no real AWS account required).
 
 ---
 
-## 1. Tech stack
-
-| Layer     | Technology                                      |
-|-----------|--------------------------------------------------|
-| Frontend  | Next.js 14 (App Router), TypeScript, Tailwind CSS, Axios |
-| Backend   | FastAPI, SQLAlchemy, Pydantic v2, python-jose (JWT), passlib (bcrypt) |
-| Database  | SQLite (file-based, `backend/route53.db`)       |
-| Auth      | Mocked email/password login, JWT bearer tokens stored client-side |
-
----
-
-## 2. Project structure
+## 1. Project structure
 
 ```
 route53-clone/
@@ -59,7 +48,7 @@ route53-clone/
 
 ---
 
-## 3. Setup instructions
+## 2. Setup instructions
 
 ### Prerequisites
 - Python 3.10+
@@ -117,7 +106,7 @@ for demo simplicity — tighten this for real deployments).
 
 ---
 
-## 4. Architecture overview
+## 3. Architecture overview
 
 - **Frontend (Next.js App Router)**: Client-rendered pages under `src/app`. A shared
   `AuthProvider` (React context) stores the JWT and user in `localStorage` and exposes
@@ -143,7 +132,7 @@ for demo simplicity — tighten this for real deployments).
 
 ---
 
-## 5. Database schema
+## 4. Database schema
 
 **users**
 | Column           | Type     | Notes                        |
@@ -183,7 +172,7 @@ for demo simplicity — tighten this for real deployments).
 
 ---
 
-## 6. API overview
+## 5. API overview
 
 Base URL: `http://localhost:8000`. All endpoints except `/api/auth/register` and
 `/api/auth/login` require an `Authorization: Bearer <token>` header. Full interactive docs (via
@@ -216,19 +205,7 @@ Swagger UI) are auto-generated at `/docs`.
 
 ---
 
-## 7. What's mocked vs. real
-
-- **Real**: full CRUD for hosted zones and records, persisted in SQLite; search, pagination,
-  filtering; JWT-based auth and session persistence; input validation (record type whitelist,
-  duplicate detection, required fields).
-- **Mocked (by design, per assignment scope)**: no real DNS propagation; IAM/Organizations/
-  Billing are not implemented; Dashboard stats are derived from the zones/records tables rather
-  than real traffic metrics; Traffic Policies, Health Checks, Resolver, and Profiles are
-  "Coming soon" placeholders.
-
----
-
-## 8. Possible extensions (not included by default)
+## 6. Possible extensions (not included by default)
 
 - BIND zone file import/export
 - Dark mode
