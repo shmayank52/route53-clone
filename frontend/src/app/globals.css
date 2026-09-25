@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: #f2f3f3;
+  color: #16191f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.aws-input {
+  @apply w-full px-2.5 py-1.5 text-sm border border-awsBorder rounded-[3px] outline-none focus:border-awsBlue focus:ring-1 focus:ring-awsBlue bg-white;
+}
+
+.aws-label {
+  @apply block text-sm font-semibold text-awsText mb-1;
+}
+
+.aws-btn-primary {
+  @apply px-3.5 py-1.5 text-sm font-normal rounded-[3px] bg-awsBlue text-white hover:bg-[#075fb0] disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+}
+
+.aws-btn-secondary {
+  @apply px-3.5 py-1.5 text-sm font-normal rounded-[3px] border border-awsBlue text-awsBlue bg-white hover:bg-[#f0f7ff] disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+}
+
+.aws-btn-danger-text {
+  @apply px-3.5 py-1.5 text-sm font-normal rounded-[3px] border border-[#d13212] text-[#d13212] bg-white hover:bg-[#fdf3f1] disabled:opacity-50 transition-colors;
+}
+
+.aws-table th {
+  @apply text-left text-xs font-semibold text-awsText px-3 py-2 border-b border-awsBorder bg-[#fafafa] uppercase tracking-wide;
+}
+
+.aws-table td {
+  @apply px-3 py-2 text-sm border-b border-awsBorder text-awsText;
+}
+
+.aws-panel {
+  @apply bg-white border border-awsBorder rounded-[3px];
+}
